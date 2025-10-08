@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink text-white font-body antialiased;
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 137, 6, 0.08), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(77, 150, 255, 0.12), transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(255, 31, 118, 0.08), transparent 50%);
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-accent text-ink;
+}
+
+a {
+  @apply text-white transition-colors duration-300;
+}
+
+a:hover {
+  @apply text-accent;
+}
+
+#root {
+  @apply min-h-screen;
+}
