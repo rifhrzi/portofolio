@@ -21,7 +21,7 @@ const WorkSection = () => {
       }
     >
       <div className="mx-auto max-w-6xl space-y-10 sm:space-y-12">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] md:items-end md:gap-10">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] md:items-start md:gap-10">
           <div className="space-y-4 sm:space-y-6">
             <p className="text-sm uppercase tracking-[0.24em] text-muted/70 sm:tracking-[0.32em] md:tracking-[0.4em]">
               Selected Work
