@@ -23,10 +23,11 @@ const AboutSection = () => {
               Cross-discipline builder shaping games, mobile apps, and student-led initiatives.
             </h2>
             <p className="text-sm text-muted">
-              My work blends game design, Flutter engineering, and UX research with a background in leading campus
-              innovation programs. Currently, I split my time between part-time Teelite engagements and independent
-              projects, translating feedback from players, students, and partners into experiences that feel intuitive,
-              playful, and sustainable.
+              My work blends game design, Flutter engineering, and UX research across Teelite storefronts and finance
+              tools, Space Studio\'s Exorcist Bane combat loops, Untirta\'s alumni portal, Bangkit\'s mobile library,
+              and the HMI R&D study club series. I pair part-time Teelite collaborations with independent builds,
+              translating feedback from players, students, and partners into experiences that stay intuitive, playful,
+              and sustainable.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-muted">

@@ -1,5 +1,5 @@
 import { motion, type Variants, useReducedMotion } from '../lib/motion'
-import { hero } from '../data/content'
+import { hero, experience } from '../data/content'
 
 const container: Variants = {
   hidden: { opacity: 0, y: 36 },
@@ -26,6 +26,15 @@ const Hero = () => {
   const sectionProps = prefersReducedMotion
     ? {}
     : { initial: 'hidden' as const, whileInView: 'visible' as const, viewport: { once: true, amount: 0.6 } }
+
+  const collaborations = experience.slice(0, 4).map((item) => {
+    const [role, organization] = item.title.split(' at ')
+    return {
+      organization: organization ?? item.title,
+      role: role ?? item.title,
+      period: item.period,
+    }
+  })
 
   return (
     <motion.section
@@ -81,12 +90,12 @@ const Hero = () => {
             custom={4}
           >
             <p className="leading-relaxed">
-              I build playable loops, mobile features, and UX narratives that translate user research into tangible
-              products.
+              I build playable loops, mobile features, and partner dashboards that translate research into the selected
+              work highlighted below.
             </p>
             <p className="leading-relaxed text-muted/90">
-              Recent work spans Space Studio\'s Exorcist Bane, Untirta\'s alumni portal, Bangkit\'s library experience,
-              and innovation programs for HMI Informatika.
+              Recent work spans Teelite\'s storefront and finance tracker, Space Studio\'s Exorcist Bane combat loops,
+              Untirta\'s alumni portal modules, Bangkit\'s mobile library prototypes, and HMI R&D study clubs.
             </p>
           </motion.div>
         </motion.div>
@@ -99,30 +108,15 @@ const Hero = () => {
           <div className="space-y-6">
             <h2 className="font-display text-2xl text-white">Selected collaborations</h2>
             <ul className="space-y-4 text-sm text-muted">
-              <li className="flex items-start justify-between gap-4">
-                <span>
-                  Teelite <span className="block text-xs text-muted/70">Part-time web dev & UI/UX</span>
-                </span>
-                <span className="text-xs font-semibold text-accent">2024-Present</span>
-              </li>
-              <li className="flex items-start justify-between gap-4">
-                <span>
-                  Space Studio <span className="block text-xs text-muted/70">Game design contributor</span>
-                </span>
-                <span className="text-xs font-semibold text-accent">2025</span>
-              </li>
-              <li className="flex items-start justify-between gap-4">
-                <span>
-                  UPA TIK Untirta <span className="block text-xs text-muted/70">Flutter mobile intern</span>
-                </span>
-                <span className="text-xs font-semibold text-accent">2024</span>
-              </li>
-              <li className="flex items-start justify-between gap-4">
-                <span>
-                  HMI Informatika <span className="block text-xs text-muted/70">R&D leadership</span>
-                </span>
-                <span className="text-xs font-semibold text-accent">2023-2024</span>
-              </li>
+              {collaborations.map((item) => (
+                <li key={item.organization} className="flex items-start justify-between gap-4">
+                  <span>
+                    {item.organization}
+                    <span className="block text-xs text-muted/70">{item.role}</span>
+                  </span>
+                  <span className="text-xs font-semibold text-accent">{item.period}</span>
+                </li>
+              ))}
             </ul>
             <motion.dl className="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-muted">
               {stats.map((item, index) => (

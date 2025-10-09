@@ -7,9 +7,9 @@ export const navigation = [
 
 export const hero = {
   greeting: 'Hi, I\'m Rifqi',
-  title: 'Interdisciplinary creator building games, mobile apps, and part-time product work at Teelite.',
+  title: 'Connecting the selected work below across Teelite, Space Studio, and campus programs.',
   subtitle:
-    'I connect gameplay systems, Flutter development, and human-centered UX—currently partnering with Teelite as a part-time web developer & designer while shipping experiences that help communities learn, collaborate, and have fun.',
+    'I link gameplay systems, Flutter development, and human-centered UX across Teelite storefronts, Space Studio\'s Exorcist Bane, the Untirta alumni portal, Bangkit\'s mobile library, and HMI R&D study clubs.',
   ctaPrimary: { label: 'View selected work', href: '#work' },
   ctaSecondary: { label: 'Learn about me', href: '#about' },
 }
@@ -97,31 +97,31 @@ export const experience = [
     period: 'Dec 2024 - Present',
     title: 'Part-Time Web Developer & UI/UX Designer at Teelite',
     summary:
-      'Designing and developing marketing experiences, UI audits, and front-end enhancements for Teelite partners.',
+      'Designing Teelite storefronts, finance trackers, and UI audits that keep partner funnels tied to shipping experiments.',
   },
   {
     period: 'Jan 2025 - Oct 2025',
     title: 'Game Designer at Space Studio',
     summary:
-      'Designed core gameplay loops, narrative beats, and playtesting workflows for mobile and casual titles.',
+      'Leading combat systems, encounter pacing, and narrative cohesion for Space Studio\'s Exorcist Bane through rapid playtest loops.',
   },
   {
     period: 'Feb 2023 - Nov 2024',
     title: 'Head of Research & Development at Himpunan Mahasiswa Informatika',
     summary:
-      'Directed student innovation programs, mentored project squads, and aligned R&D initiatives with organizational goals.',
+      'Directed the HMI R&D study club series with Ruang Data while mentoring squads delivering campus-ready innovation projects.',
   },
   {
     period: 'Aug 2023 - Jan 2024',
     title: 'UI/UX Designer at Bangkit Independent Study Project',
     summary:
-      'Delivered user journeys, interface systems, and usability tests for the Bangkit product challenge cohort.',
+      'Delivered Bangkit\'s mobile library journeys, prototypes, and usability tests spanning catalog discovery to reading progress.',
   },
   {
     period: 'Apr 2024 - Jul 2024',
     title: 'Mobile Developer Intern at UPA TIK Untirta',
     summary:
-      'Implemented Flutter features, integrated APIs, and improved app stability for campus digital services.',
+      'Implemented Untirta alumni portal modules in Flutter, integrating authentication, news feeds, and member networking APIs.',
   },
 ]
 

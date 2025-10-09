@@ -24,7 +24,7 @@ const WorkSection = () => {
               Projects bridging game design, mobile services, and community learning.
             </h2>
             <p className="text-sm text-muted md:max-w-xl">
-              Every build blends playtesting, UX research, and iterative engineering—from the Teelite e-commerce rollout to game and campus programs—keeping players, students, and alumni engaged long after release.
+              Every build blends playtesting, UX research, and iterative engineering - from Teelite storefronts and finance tools to Exorcist Bane combat loops, HMI study clubs, and campus apps that keep players, students, and alumni engaged long after release.
             </p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-muted shadow-lg shadow-black/10 backdrop-blur">
