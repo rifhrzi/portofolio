@@ -9,7 +9,7 @@ const WorkSection = () => {
     <motion.section
       id="work"
       className="relative px-4 pb-20 sm:px-6 sm:pb-28 md:px-8 md:pb-32"
-      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 48 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 48 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={
         prefersReducedMotion

@@ -8,7 +8,12 @@ const MotionProvider = ({ children }: { children: ReactNode }) => (
 
 const useReducedMotion = () => {
   const prefersReducedMotion = framerUseReducedMotion()
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return false
+    }
+    return window.matchMedia('(max-width: 767px)').matches
+  })
 
   useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {

@@ -8,7 +8,7 @@ const ProcessSection = () => {
     <motion.section
       id="process"
       className="relative px-4 pb-20 sm:px-6 sm:pb-28 md:px-8"
-      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 48 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 48 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={
         prefersReducedMotion ? undefined : { once: true, amount: 0.35, margin: '-8% 0px -12% 0px' }
@@ -54,7 +54,7 @@ const ProcessSection = () => {
                 <motion.li
                   key={step.stage}
                   className="relative overflow-visible rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur md:overflow-hidden"
-                  initial={prefersReducedMotion ? undefined : { opacity: 0, y: 30 }}
+                  initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
                   whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                   viewport={prefersReducedMotion ? undefined : { once: true, amount: 0.4 }}
                   transition={

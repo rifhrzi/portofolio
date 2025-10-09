@@ -141,7 +141,7 @@ const Hero = () => {
                       },
                     },
                   }}
-                  initial={prefersReducedMotion ? undefined : 'hidden'}
+                  initial={prefersReducedMotion ? false : 'hidden'}
                   whileInView={prefersReducedMotion ? undefined : 'visible'}
                   viewport={prefersReducedMotion ? undefined : { once: true, amount: 0.4 }}
                 >

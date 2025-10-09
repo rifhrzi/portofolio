@@ -8,7 +8,7 @@ const AboutSection = () => {
     <motion.section
       id="about"
       className="relative overflow-hidden px-4 pb-20 sm:px-6 sm:pb-28 md:px-8"
-      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 48 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 48 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={
         prefersReducedMotion ? undefined : { once: true, amount: 0.35, margin: '-8% 0px -12% 0px' }
@@ -52,7 +52,7 @@ const AboutSection = () => {
           </div>
           <motion.div
             className="space-y-4 rounded-[32px] border border-white/10 bg-gradient-to-br from-surface/60 via-surface/40 to-transparent p-6 shadow-lg shadow-black/30 backdrop-blur"
-            initial={prefersReducedMotion ? undefined : { opacity: 0, y: 40 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 40 }}
             whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={prefersReducedMotion ? undefined : { once: true, amount: 0.4 }}
             transition={
@@ -80,7 +80,7 @@ const AboutSection = () => {
             <motion.article
               key={principle.heading}
               className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/10 backdrop-blur"
-              initial={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.96 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96 }}
               whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
               viewport={prefersReducedMotion ? undefined : { once: true, amount: 0.2 }}
               whileHover={

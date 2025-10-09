@@ -8,7 +8,7 @@ const Navbar = () => {
     <header className="sticky top-4 z-30 flex justify-center px-3 sm:top-6 sm:px-4">
       <motion.nav
         className="flex w-full max-w-4xl items-center justify-between rounded-full border border-white/10 bg-surface/70 px-4 py-2.5 backdrop-blur-xl sm:px-6 sm:py-3"
-        initial={prefersReducedMotion ? undefined : { opacity: 0, y: -20 }}
+        initial={prefersReducedMotion ? false : { opacity: 0, y: -20 }}
         animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         transition={
           prefersReducedMotion ? undefined : { duration: 0.6, ease: [0.23, 1, 0.32, 1] }

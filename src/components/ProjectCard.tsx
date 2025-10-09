@@ -68,7 +68,7 @@ const ProjectCard = ({ project, index, className }: ProjectCardProps) => {
   return (
     <motion.article
       className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-5 py-7 text-left transition duration-500 sm:px-8 sm:py-10 md:px-10 md:py-12 ${className ?? ''}`}
-      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 32, scale: 0.97 }}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 32, scale: 0.97 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
       viewport={
         prefersReducedMotion ? undefined : { once: true, amount: 0.45, margin: '-10% 0px -10% 0px' }
