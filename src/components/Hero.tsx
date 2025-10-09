@@ -27,8 +27,8 @@ const Hero = () => {
     ? {}
     : {
         initial: 'hidden' as const,
-        whileInView: 'visible' as const,
-        viewport: { once: true, amount: 0.65, margin: '-6% 0px -12% 0px' },
+        animate: 'visible' as const,
+        viewport: { once: true, amount: 0.35, margin: '-8% 0px -10% 0px' },
       }
 
   const collaborations = experience.slice(0, 4).map((item) => {
