@@ -11,7 +11,9 @@ const WorkSection = () => {
       className="relative px-4 pb-24 sm:px-6 sm:pb-32 md:px-8"
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 48 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={prefersReducedMotion ? undefined : { once: true, amount: 0.4 }}
+      viewport={
+        prefersReducedMotion ? undefined : { once: true, amount: 0.2, margin: '-15% 0px -15% 0px' }
+      }
       transition={
         prefersReducedMotion ? undefined : { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const }
       }
