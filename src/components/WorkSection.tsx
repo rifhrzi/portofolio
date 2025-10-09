@@ -14,7 +14,7 @@ const WorkSection = () => {
       viewport={
         prefersReducedMotion
           ? undefined
-          : { once: true, amount: 0.12, margin: '0px 0px -120px 0px' }
+          : { once: true, amount: 0.25, margin: '-10% 0px -15% 0px' }
       }
       transition={
         prefersReducedMotion ? undefined : { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const }

@@ -25,7 +25,11 @@ const Hero = () => {
   const prefersReducedMotion = useReducedMotion()
   const sectionProps = prefersReducedMotion
     ? {}
-    : { initial: 'hidden' as const, whileInView: 'visible' as const, viewport: { once: true, amount: 0.6 } }
+    : {
+        initial: 'hidden' as const,
+        whileInView: 'visible' as const,
+        viewport: { once: true, amount: 0.65, margin: '-6% 0px -12% 0px' },
+      }
 
   const collaborations = experience.slice(0, 4).map((item) => {
     const [role, organization] = item.title.split(' at ')

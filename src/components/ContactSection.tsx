@@ -10,7 +10,9 @@ const ContactSection = () => {
       className="relative px-4 pb-20 sm:px-6 sm:pb-28 md:px-8"
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 60 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={prefersReducedMotion ? undefined : { once: true, amount: 0.4 }}
+      viewport={
+        prefersReducedMotion ? undefined : { once: true, amount: 0.35, margin: '-8% 0px -12% 0px' }
+      }
       transition={
         prefersReducedMotion ? undefined : { duration: 0.7, ease: [0.23, 1, 0.32, 1] as const }
       }
