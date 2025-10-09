@@ -24,10 +24,10 @@ const ContactSection = () => {
             <p className="text-sm uppercase tracking-[0.24em] text-muted/70 sm:tracking-[0.32em] md:tracking-[0.4em]">
               Contact
             </p>
-            <h2 className="font-display text-3xl text-white sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl text-white text-pretty sm:text-4xl lg:text-5xl">
               Let's create something vivid.
             </h2>
-            <p className="text-sm text-muted md:max-w-md">
+            <p className="text-sm text-pretty text-muted md:max-w-md">
               I'm open to collaborations, artful product engagements, and conversations about how design and
               engineering can move together.
             </p>
@@ -52,8 +52,8 @@ const ContactSection = () => {
             <span className="text-xs uppercase tracking-[0.18em] text-muted/70 sm:tracking-[0.24em] md:tracking-[0.3em]">
               Availability
             </span>
-            <p className="mt-2 text-white">Bookings open for November 2025</p>
-            <p className="mt-2">
+            <p className="mt-2 text-white text-pretty">Bookings open for November 2025</p>
+            <p className="mt-2 text-pretty">
               Half and full collaborations, with flexible retainers for product teams needing embedded support.
             </p>
             <div className="mt-6 grid gap-3 text-sm">
@@ -75,7 +75,7 @@ const ContactSection = () => {
           </div>
         </div>
       </motion.div>
-      <p className="mt-10 text-center text-xs text-muted">
+      <p className="mt-10 text-center text-xs text-pretty text-muted">
         Copyright {new Date().getFullYear()} Rifqi. Crafted with curiosity and a love for visual rhythm.
       </p>
     </motion.section>

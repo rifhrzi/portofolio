@@ -96,8 +96,8 @@ const ProjectCard = ({ project, index, className }: ProjectCardProps) => {
         </span>
         <span className="text-sm text-muted">0{index + 1}</span>
       </div>
-      <h3 className="font-display text-2xl text-white sm:text-3xl">{project.title}</h3>
-      <p className="mt-4 max-w-xl text-sm text-muted">{project.description}</p>
+      <h3 className="font-display text-2xl text-white text-pretty sm:text-3xl">{project.title}</h3>
+      <p className="mt-4 max-w-xl text-sm text-pretty text-muted">{project.description}</p>
       <ul className="mt-6 flex flex-wrap gap-2 text-xs text-muted/90">
         {project.tags.map((tag) => (
           <li

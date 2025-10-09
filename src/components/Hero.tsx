@@ -45,8 +45,8 @@ const Hero = () => {
         prefersReducedMotion ? undefined : { duration: 1, ease: [0.16, 1, 0.3, 1] as const }
       }
     >
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[minmax(0,1fr),minmax(0,0.8fr)] md:items-end md:gap-12">
-        <motion.div className="max-w-3xl space-y-8 md:space-y-10" variants={container}>
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[minmax(0,1fr),minmax(0,0.8fr)] md:items-end md:gap-12">
+        <motion.div className="max-w-3xl space-y-7 md:space-y-10" variants={container}>
           <motion.span
             className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-muted sm:px-4 sm:tracking-[0.3em]"
             custom={0}
@@ -54,13 +54,13 @@ const Hero = () => {
             {hero.greeting}
           </motion.span>
           <motion.h1
-            className="font-display text-4xl leading-tight sm:text-5xl md:text-6xl"
+            className="font-display text-4xl leading-tight text-pretty sm:text-5xl md:text-6xl"
             variants={container}
             custom={1}
           >
             {hero.title}
           </motion.h1>
-          <motion.p className="max-w-2xl text-lg text-muted" variants={container} custom={2}>
+          <motion.p className="max-w-2xl text-lg text-pretty text-muted" variants={container} custom={2}>
             {hero.subtitle}
           </motion.p>
           <motion.div className="flex flex-wrap gap-3 sm:gap-4" variants={container} custom={3}>
@@ -102,15 +102,18 @@ const Hero = () => {
         <motion.aside
           variants={container}
           custom={5}
-          className="relative mt-4 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-surface/60 to-transparent p-6 sm:p-8 md:mt-0 md:p-10"
+          className="relative mt-6 space-y-6 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-surface/60 to-transparent p-6 sm:space-y-7 sm:p-8 md:mt-0 md:space-y-8 md:p-10"
         >
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-accent/20 via-transparent to-transparent blur-3xl" />
-          <div className="space-y-6">
-            <h2 className="font-display text-2xl text-white">Selected collaborations</h2>
-            <ul className="space-y-4 text-sm text-muted">
+          <div className="space-y-5 sm:space-y-6">
+            <h2 className="font-display text-2xl text-white text-pretty">Selected collaborations</h2>
+            <ul className="space-y-3 text-sm text-muted">
               {collaborations.map((item) => (
-                <li key={item.organization} className="flex items-start justify-between gap-4">
-                  <span>
+                <li
+                  key={item.organization}
+                  className="flex flex-col gap-1 rounded-2xl border border-white/5 bg-white/5 p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4"
+                >
+                  <span className="text-pretty">
                     {item.organization}
                     <span className="block text-xs text-muted/70">{item.role}</span>
                   </span>

@@ -47,7 +47,7 @@ const App = () => {
           />
         </div>
         <Navbar />
-        <main className="mx-auto max-w-6xl space-y-20 px-4 pb-20 sm:space-y-24 sm:px-6 sm:pb-24 md:px-8">
+        <main className="mx-auto max-w-6xl space-y-16 px-4 pb-20 sm:space-y-24 sm:px-6 sm:pb-24 md:px-8">
           <Hero />
           <WorkSection />
           <AboutSection />

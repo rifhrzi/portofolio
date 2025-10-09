@@ -21,15 +21,15 @@ const WorkSection = () => {
       }
     >
       <div className="mx-auto max-w-6xl space-y-10 sm:space-y-12">
-        <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] md:items-end">
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] md:items-end md:gap-10">
           <div className="space-y-4 sm:space-y-6">
             <p className="text-sm uppercase tracking-[0.24em] text-muted/70 sm:tracking-[0.32em] md:tracking-[0.4em]">
               Selected Work
             </p>
-            <h2 className="font-display text-3xl text-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-white text-pretty sm:text-4xl">
               Projects bridging game design, mobile services, and community learning.
             </h2>
-            <p className="text-sm text-muted md:max-w-xl">
+            <p className="text-sm text-pretty text-muted md:max-w-xl">
               Every build blends playtesting, UX research, and iterative engineering - from Teelite storefronts and finance tools to Exorcist Bane combat loops, HMI study clubs, and campus apps that keep players, students, and alumni engaged long after release.
             </p>
           </div>
@@ -44,7 +44,7 @@ const WorkSection = () => {
           </div>
         </div>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)]">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
             {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} index={index} className="h-full" />
             ))}
@@ -57,15 +57,15 @@ const WorkSection = () => {
               <ul className="space-y-4">
                 <li>
                   <span className="font-semibold text-white">Insight-led loops</span>
-                  <p>Player tests, student surveys, and alumni feedback inform mechanics and feature priorities.</p>
+                  <p className="text-pretty">Player tests, student surveys, and alumni feedback inform mechanics and feature priorities.</p>
                 </li>
                 <li>
                   <span className="font-semibold text-white">Prototyping rhythm</span>
-                  <p>Figma journeys, Flutter builds, and paper playtests keep teams aligned on the next iteration.</p>
+                  <p className="text-pretty">Figma journeys, Flutter builds, and paper playtests keep teams aligned on the next iteration.</p>
                 </li>
                 <li>
                   <span className="font-semibold text-white">Community enablement</span>
-                  <p>Workshops, study clubs, and documentation ensure knowledge stays with the people we serve.</p>
+                  <p className="text-pretty">Workshops, study clubs, and documentation ensure knowledge stays with the people we serve.</p>
                 </li>
               </ul>
             </div>
@@ -79,15 +79,15 @@ const WorkSection = () => {
             <ul className="space-y-4">
               <li>
                 <span className="font-semibold text-white">Insight-led loops</span>
-                <p>Player tests, student surveys, and alumni feedback inform mechanics and feature priorities.</p>
+                <p className="text-pretty">Player tests, student surveys, and alumni feedback inform mechanics and feature priorities.</p>
               </li>
               <li>
                 <span className="font-semibold text-white">Prototyping rhythm</span>
-                <p>Figma journeys, Flutter builds, and paper playtests keep teams aligned on the next iteration.</p>
+                <p className="text-pretty">Figma journeys, Flutter builds, and paper playtests keep teams aligned on the next iteration.</p>
               </li>
               <li>
                 <span className="font-semibold text-white">Community enablement</span>
-                <p>Workshops, study clubs, and documentation ensure knowledge stays with the people we serve.</p>
+                <p className="text-pretty">Workshops, study clubs, and documentation ensure knowledge stays with the people we serve.</p>
               </li>
             </ul>
           </div>

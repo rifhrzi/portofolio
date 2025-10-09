@@ -21,10 +21,10 @@ const AboutSection = () => {
             <p className="text-sm uppercase tracking-[0.24em] text-muted/70 sm:tracking-[0.32em] md:tracking-[0.4em]">
               About
             </p>
-            <h2 className="font-display text-3xl text-white sm:text-4xl">
+            <h2 className="font-display text-3xl text-white text-pretty sm:text-4xl">
               Cross-discipline builder shaping games, mobile apps, and student-led initiatives.
             </h2>
-            <p className="text-sm text-muted">
+            <p className="text-sm text-pretty text-muted">
               My work blends game design, Flutter engineering, and UX research across Teelite storefronts and finance
               tools, Space Studio\'s Exorcist Bane combat loops, Untirta\'s alumni portal, Bangkit\'s mobile library,
               and the HMI R&D study club series. I pair part-time Teelite collaborations with independent builds,
@@ -36,15 +36,15 @@ const AboutSection = () => {
                 <span className="text-xs uppercase tracking-[0.18em] text-muted/70 sm:tracking-[0.24em] md:tracking-[0.3em]">
                   Focus
                 </span>
-                <p className="mt-2 text-white">Playful & community-driven products</p>
-                <p>Designing gameplay, mobile flows, and Teelite partner touchpoints that keep students, alumni, and players engaged.</p>
+                <p className="mt-2 text-white text-pretty">Playful & community-driven products</p>
+                <p className="text-pretty">Designing gameplay, mobile flows, and Teelite partner touchpoints that keep students, alumni, and players engaged.</p>
               </div>
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-muted">
                 <span className="text-xs uppercase tracking-[0.18em] text-muted/70 sm:tracking-[0.24em] md:tracking-[0.3em]">
                   Toolset
                 </span>
-                <p className="mt-2 text-white">Flutter, Dart, Figma, Notion</p>
-                <p>Unity-style prototyping, FigJam for facilitation, and collaboration rituals that keep teams aligned.</p>
+                <p className="mt-2 text-white text-pretty">Flutter, Dart, Figma, Notion</p>
+                <p className="text-pretty">Unity-style prototyping, FigJam for facilitation, and collaboration rituals that keep teams aligned.</p>
               </div>
             </div>
           </div>
@@ -66,8 +66,8 @@ const AboutSection = () => {
                   <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent/80 sm:tracking-[0.26em] md:tracking-[0.3em]">
                     {item.period}
                   </span>
-                  <p className="mt-2 font-display text-lg text-white">{item.title}</p>
-                  <p className="mt-1 text-xs text-muted/80">{item.summary}</p>
+                  <p className="mt-2 font-display text-lg text-white text-pretty">{item.title}</p>
+                  <p className="mt-1 text-xs text-pretty text-muted/80">{item.summary}</p>
                 </li>
               ))}
             </ul>
@@ -91,7 +91,7 @@ const AboutSection = () => {
               }
             >
               <h3 className="font-display text-xl text-white">{principle.heading}</h3>
-              <p className="mt-3 text-sm text-muted">{principle.copy}</p>
+              <p className="mt-3 text-sm text-pretty text-muted">{principle.copy}</p>
             </motion.article>
           ))}
         </div>
