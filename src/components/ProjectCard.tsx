@@ -67,7 +67,7 @@ const ProjectCard = ({ project, index, className }: ProjectCardProps) => {
 
   return (
     <motion.article
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-8 text-left transition duration-500 md:px-10 md:py-12 ${className ?? ''}`}
+      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-5 py-7 text-left transition duration-500 sm:px-8 sm:py-10 md:px-10 md:py-12 ${className ?? ''}`}
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 32, scale: 0.97 }}
       animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
       transition={
@@ -90,7 +90,7 @@ const ProjectCard = ({ project, index, className }: ProjectCardProps) => {
       onMouseMove={enableTilt ? handleMouseMove : undefined}
       onMouseLeave={enableTilt ? resetRotation : undefined}
     >
-      <div className="mb-8 flex items-center justify-between">
+      <div className="mb-6 flex items-center justify-between md:mb-8">
         <span className="text-sm font-semibold uppercase tracking-[0.35em] text-muted/80">
           {project.year}
         </span>

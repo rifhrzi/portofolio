@@ -5,9 +5,9 @@ const Navbar = () => {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <header className="sticky top-6 z-30 flex justify-center px-4">
+    <header className="sticky top-4 z-30 flex justify-center px-3 sm:top-6 sm:px-4">
       <motion.nav
-        className="flex w-full max-w-4xl items-center justify-between rounded-full border border-white/10 bg-surface/70 px-6 py-3 backdrop-blur-xl"
+        className="flex w-full max-w-4xl items-center justify-between rounded-full border border-white/10 bg-surface/70 px-4 py-2.5 backdrop-blur-xl sm:px-6 sm:py-3"
         initial={prefersReducedMotion ? undefined : { opacity: 0, y: -20 }}
         animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         transition={

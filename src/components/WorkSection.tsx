@@ -8,20 +8,24 @@ const WorkSection = () => {
   return (
     <motion.section
       id="work"
-      className="relative px-4 pb-24 sm:px-6 sm:pb-32 md:px-8"
+      className="relative px-4 pb-20 sm:px-6 sm:pb-28 md:px-8 md:pb-32"
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 48 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={
-        prefersReducedMotion ? undefined : { once: true, amount: 0.2, margin: '-15% 0px -15% 0px' }
+        prefersReducedMotion
+          ? undefined
+          : { once: true, amount: 0.12, margin: '0px 0px -120px 0px' }
       }
       transition={
         prefersReducedMotion ? undefined : { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const }
       }
     >
-      <div className="mx-auto max-w-6xl space-y-12">
+      <div className="mx-auto max-w-6xl space-y-10 sm:space-y-12">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] md:items-end">
           <div className="space-y-4 sm:space-y-6">
-            <p className="text-sm uppercase tracking-[0.4em] text-muted/70">Selected Work</p>
+            <p className="text-sm uppercase tracking-[0.24em] text-muted/70 sm:tracking-[0.32em] md:tracking-[0.4em]">
+              Selected Work
+            </p>
             <h2 className="font-display text-3xl text-white sm:text-4xl">
               Projects bridging game design, mobile services, and community learning.
             </h2>
@@ -29,9 +33,9 @@ const WorkSection = () => {
               Every build blends playtesting, UX research, and iterative engineering - from Teelite storefronts and finance tools to Exorcist Bane combat loops, HMI study clubs, and campus apps that keep players, students, and alumni engaged long after release.
             </p>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-muted shadow-lg shadow-black/10 backdrop-blur">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-muted shadow-lg shadow-black/10 backdrop-blur sm:p-6">
             <span className="font-semibold text-white">Core capabilities</span>
-            <ul className="mt-3 grid gap-2 text-xs uppercase tracking-[0.3em] text-muted/70 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-2 text-xs uppercase tracking-[0.2em] text-muted/70 sm:grid-cols-2 sm:tracking-[0.26em] md:tracking-[0.3em]">
               <li>Game Systems</li>
               <li>Flutter Development</li>
               <li>UX Research</li>
@@ -47,7 +51,9 @@ const WorkSection = () => {
           </div>
           <div className="hidden lg:block">
             <div className="sticky top-32 space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-surface/70 via-surface/40 to-transparent p-6 text-sm text-muted shadow-inner shadow-black/40 backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.3em] text-muted/70">Workflow snapshots</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-muted/70 sm:tracking-[0.26em] md:tracking-[0.3em]">
+                Workflow snapshots
+              </p>
               <ul className="space-y-4">
                 <li>
                   <span className="font-semibold text-white">Insight-led loops</span>
@@ -66,8 +72,10 @@ const WorkSection = () => {
           </div>
         </div>
         <div className="lg:hidden">
-          <div className="mt-6 space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-surface/70 via-surface/40 to-transparent p-6 text-sm text-muted shadow-inner shadow-black/40 backdrop-blur">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted/70">Workflow snapshots</p>
+          <div className="mt-6 space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-surface/70 via-surface/40 to-transparent p-5 text-sm text-muted shadow-inner shadow-black/40 backdrop-blur sm:p-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted/70 sm:tracking-[0.26em] md:tracking-[0.3em]">
+              Workflow snapshots
+            </p>
             <ul className="space-y-4">
               <li>
                 <span className="font-semibold text-white">Insight-led loops</span>

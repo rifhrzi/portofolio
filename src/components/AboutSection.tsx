@@ -7,7 +7,7 @@ const AboutSection = () => {
   return (
     <motion.section
       id="about"
-      className="relative overflow-hidden px-4 pb-24 sm:px-6 sm:pb-32 md:px-8"
+      className="relative overflow-hidden px-4 pb-20 sm:px-6 sm:pb-28 md:px-8"
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 48 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={prefersReducedMotion ? undefined : { once: true, amount: 0.4 }}
@@ -16,9 +16,11 @@ const AboutSection = () => {
       }
     >
       <div className="mx-auto max-w-6xl space-y-12">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.8fr)]">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr),minmax(0,0.8fr)] lg:gap-10">
           <div className="space-y-6 sm:space-y-8">
-            <p className="text-sm uppercase tracking-[0.4em] text-muted/70">About</p>
+            <p className="text-sm uppercase tracking-[0.24em] text-muted/70 sm:tracking-[0.32em] md:tracking-[0.4em]">
+              About
+            </p>
             <h2 className="font-display text-3xl text-white sm:text-4xl">
               Cross-discipline builder shaping games, mobile apps, and student-led initiatives.
             </h2>
@@ -31,12 +33,16 @@ const AboutSection = () => {
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-muted">
-                <span className="text-xs uppercase tracking-[0.3em] text-muted/70">Focus</span>
+                <span className="text-xs uppercase tracking-[0.18em] text-muted/70 sm:tracking-[0.24em] md:tracking-[0.3em]">
+                  Focus
+                </span>
                 <p className="mt-2 text-white">Playful & community-driven products</p>
                 <p>Designing gameplay, mobile flows, and Teelite partner touchpoints that keep students, alumni, and players engaged.</p>
               </div>
               <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-muted">
-                <span className="text-xs uppercase tracking-[0.3em] text-muted/70">Toolset</span>
+                <span className="text-xs uppercase tracking-[0.18em] text-muted/70 sm:tracking-[0.24em] md:tracking-[0.3em]">
+                  Toolset
+                </span>
                 <p className="mt-2 text-white">Flutter, Dart, Figma, Notion</p>
                 <p>Unity-style prototyping, FigJam for facilitation, and collaboration rituals that keep teams aligned.</p>
               </div>
@@ -51,11 +57,13 @@ const AboutSection = () => {
               prefersReducedMotion ? undefined : { duration: 0.75, ease: [0.22, 1, 0.36, 1] as const }
             }
           >
-            <p className="text-xs uppercase tracking-[0.3em] text-muted/70">Trajectory</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted/70 sm:tracking-[0.26em] md:tracking-[0.3em]">
+              Trajectory
+            </p>
             <ul className="space-y-4 text-sm text-muted">
               {experience.map((item) => (
                 <li key={item.title} className="rounded-2xl border border-white/5 bg-white/5 p-4">
-                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent/80">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-accent/80 sm:tracking-[0.26em] md:tracking-[0.3em]">
                     {item.period}
                   </span>
                   <p className="mt-2 font-display text-lg text-white">{item.title}</p>

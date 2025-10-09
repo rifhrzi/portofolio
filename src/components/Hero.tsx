@@ -40,15 +40,15 @@ const Hero = () => {
     <motion.section
       id="top"
       {...sectionProps}
-      className="relative isolate overflow-hidden px-4 pt-24 pb-24 sm:px-6 sm:pt-32 sm:pb-28 md:px-8 md:pt-36"
+      className="relative isolate overflow-hidden px-4 pt-20 pb-20 sm:px-6 sm:pt-32 sm:pb-28 md:px-8 md:pt-36"
       transition={
         prefersReducedMotion ? undefined : { duration: 1, ease: [0.16, 1, 0.3, 1] as const }
       }
     >
-      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[minmax(0,1fr),minmax(0,0.8fr)] md:items-end">
+      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[minmax(0,1fr),minmax(0,0.8fr)] md:items-end md:gap-12">
         <motion.div className="max-w-3xl space-y-8 md:space-y-10" variants={container}>
           <motion.span
-            className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-muted"
+            className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-muted sm:px-4 sm:tracking-[0.3em]"
             custom={0}
           >
             {hero.greeting}
@@ -63,7 +63,7 @@ const Hero = () => {
           <motion.p className="max-w-2xl text-lg text-muted" variants={container} custom={2}>
             {hero.subtitle}
           </motion.p>
-          <motion.div className="flex flex-wrap gap-4" variants={container} custom={3}>
+          <motion.div className="flex flex-wrap gap-3 sm:gap-4" variants={container} custom={3}>
             <motion.a
               href={hero.ctaPrimary.href}
               className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink shadow-glow transition hover:bg-white"
@@ -85,7 +85,7 @@ const Hero = () => {
             </motion.a>
           </motion.div>
           <motion.div
-            className="grid gap-4 border-l border-white/10 pl-6 text-sm text-muted md:max-w-xl"
+            className="grid gap-4 text-sm text-muted md:max-w-xl md:border-l md:border-white/10 md:pl-6"
             variants={container}
             custom={4}
           >
@@ -102,7 +102,7 @@ const Hero = () => {
         <motion.aside
           variants={container}
           custom={5}
-          className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-surface/60 to-transparent p-6 sm:p-8 md:p-10"
+          className="relative mt-4 overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-white/10 via-surface/60 to-transparent p-6 sm:p-8 md:mt-0 md:p-10"
         >
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-accent/20 via-transparent to-transparent blur-3xl" />
           <div className="space-y-6">
@@ -118,7 +118,7 @@ const Hero = () => {
                 </li>
               ))}
             </ul>
-            <motion.dl className="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-muted">
+            <motion.dl className="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-muted sm:grid-cols-2">
               {stats.map((item, index) => (
                 <motion.div
                   key={item.label}
