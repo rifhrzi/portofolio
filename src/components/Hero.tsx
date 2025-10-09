@@ -24,7 +24,7 @@ const stats = [
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion()
   const sectionProps = prefersReducedMotion
-    ? {}
+    ? { initial: 'visible' as const, animate: 'visible' as const }
     : {
         initial: 'hidden' as const,
         animate: 'visible' as const,
