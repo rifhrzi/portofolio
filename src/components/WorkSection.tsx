@@ -1,103 +1,106 @@
-import { motion, useReducedMotion } from '../lib/motion'
-import ProjectCard from './ProjectCard'
-import { projects } from '../data/content'
+import { useState } from "react";
+import { motion, useReducedMotion } from "../lib/motion";
+import ProjectCard from "./ProjectCard";
+import { projects } from "../data/content";
+
+const categories = ["All", "Next.js", "React", "Mobile App", "E-Commerce"];
 
 const WorkSection = () => {
-  const prefersReducedMotion = useReducedMotion()
+  const prefersReducedMotion = useReducedMotion();
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [showAll, setShowAll] = useState(false);
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.tags.includes(activeFilter));
+
+  const displayedProjects = showAll
+    ? filteredProjects
+    : filteredProjects.slice(0, 6);
 
   return (
-    <motion.section
-      id="work"
-      className="relative px-4 pb-20 sm:px-6 sm:pb-28 md:px-8 md:pb-32"
-      initial={prefersReducedMotion ? false : { opacity: 0, y: 48 }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={
-        prefersReducedMotion
-          ? undefined
-          : { once: true, amount: 0.25, margin: '-10% 0px -15% 0px' }
-      }
-      transition={
-        prefersReducedMotion ? undefined : { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const }
-      }
-    >
-      <div className="mx-auto max-w-6xl space-y-10 sm:space-y-12">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr),minmax(0,0.9fr)] md:items-start md:gap-10">
-          <div className="space-y-4 sm:space-y-6">
-            <p className="text-sm uppercase tracking-[0.24em] text-muted/70 sm:tracking-[0.32em] md:tracking-[0.4em]">
-              Selected Work
-            </p>
-            <h2 className="font-display text-3xl text-white text-pretty sm:text-4xl">
-              Projects bridging game design, mobile services, and community learning.
-            </h2>
-            <p className="text-sm text-pretty text-muted md:max-w-xl">
-              Every build blends playtesting, UX research, and iterative engineering - from Teelite storefronts and finance tools to Exorcist Bane combat loops, HMI study clubs, and campus apps that keep players, students, and alumni engaged long after release.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-sm text-muted shadow-lg shadow-black/10 backdrop-blur sm:p-6">
-            <span className="font-semibold text-white">Core capabilities</span>
-            <ul className="mt-3 grid gap-2 text-xs uppercase tracking-[0.2em] text-muted/70 sm:grid-cols-2 sm:tracking-[0.26em] md:tracking-[0.3em]">
-              <li>Game Systems</li>
-              <li>Flutter Development</li>
-              <li>UX Research</li>
-              <li>Community Programs</li>
-            </ul>
-          </div>
-        </div>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,2.4fr)_minmax(0,1fr)]">
-          <div className="grid gap-5 sm:grid-cols-2 sm:gap-6">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} className="h-full" />
-            ))}
-          </div>
-          <div className="hidden lg:block">
-            <div className="sticky top-32 space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-surface/70 via-surface/40 to-transparent p-6 text-sm text-muted shadow-inner shadow-black/40 backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted/70 sm:tracking-[0.26em] md:tracking-[0.3em]">
-                Workflow snapshots
-              </p>
-              <ul className="space-y-4">
-                <li>
-                  <span className="font-semibold text-white">Insight-led loops</span>
-                  <p className="text-pretty">Player tests, student surveys, and alumni feedback inform mechanics and feature priorities.</p>
-                </li>
-                <li>
-                  <span className="font-semibold text-white">Prototyping rhythm</span>
-                  <p className="text-pretty">Figma journeys, Flutter builds, and paper playtests keep teams aligned on the next iteration.</p>
-                </li>
-                <li>
-                  <span className="font-semibold text-white">Community enablement</span>
-                  <p className="text-pretty">Workshops, study clubs, and documentation ensure knowledge stays with the people we serve.</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="lg:hidden">
-          <div className="mt-6 space-y-6 rounded-3xl border border-white/10 bg-gradient-to-br from-surface/70 via-surface/40 to-transparent p-5 text-sm text-muted shadow-inner shadow-black/40 backdrop-blur sm:p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-muted/70 sm:tracking-[0.26em] md:tracking-[0.3em]">
-              Workflow snapshots
-            </p>
-            <ul className="space-y-4">
-              <li>
-                <span className="font-semibold text-white">Insight-led loops</span>
-                <p className="text-pretty">Player tests, student surveys, and alumni feedback inform mechanics and feature priorities.</p>
-              </li>
-              <li>
-                <span className="font-semibold text-white">Prototyping rhythm</span>
-                <p className="text-pretty">Figma journeys, Flutter builds, and paper playtests keep teams aligned on the next iteration.</p>
-              </li>
-              <li>
-                <span className="font-semibold text-white">Community enablement</span>
-                <p className="text-pretty">Workshops, study clubs, and documentation ensure knowledge stays with the people we serve.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/15 blur-3xl" />
-      </div>
-    </motion.section>
-  )
-}
+    <section id="work" className="px-4 py-20 sm:px-6 sm:py-28">
+      <div className="mx-auto max-w-5xl">
+        {/* Header */}
+        <motion.div
+          className="mb-12"
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}>
+          <p className="text-sm font-medium uppercase tracking-wider text-accent">
+            Selected Work
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-bold text-white sm:text-4xl">
+            Projects & Collaborations
+          </h2>
+          <p className="mt-4 max-w-xl text-muted">
+            A showcase of my recent work in web development, mobile apps, and
+            digital solutions.
+          </p>
+        </motion.div>
 
-export default WorkSection
+        {/* Filters */}
+        <motion.div
+          className="mb-8 flex flex-wrap gap-2"
+          initial={prefersReducedMotion ? {} : { opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}>
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => {
+                setActiveFilter(category);
+                setShowAll(false);
+              }}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+                activeFilter === category
+                  ? "bg-accent text-ink"
+                  : "bg-white/5 text-muted hover:bg-white/10 hover:text-white"
+              }`}>
+              {category}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {displayedProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+
+        {/* Show More */}
+        {filteredProjects.length > 6 && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-accent hover:text-accent">
+              {showAll
+                ? "Show Less"
+                : `View All ${filteredProjects.length} Projects`}
+              <svg
+                className={`h-4 w-4 transition-transform ${
+                  showAll ? "rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default WorkSection;

@@ -16,6 +16,56 @@ export const hero = {
 
 export const projects = [
   {
+    id: 'restosupply',
+    title: 'RestoSupply',
+    description:
+      'A comprehensive restaurant supply management system featuring a real-time dashboard, intuitive POS/cashier interface, inventory tracking with low-stock alerts, menu & recipe management, and detailed sales reports with IDR currency support.',
+    year: '2025',
+    role: 'Full Stack Developer',
+    link: 'https://github.com/rifhrzi/fnb-stock-tracker',
+    tags: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind CSS', 'SQLite'],
+  },
+  {
+    id: 'readscape',
+    title: 'ReadScape',
+    description:
+      'A reading platform that promotes interest in reading and encourages creativity among writers across Indonesia. Features social feed, fiction library, story uploads, and an integrated plagiarism detector.',
+    year: '2023',
+    role: 'Full Stack Developer',
+    link: 'https://github.com/ReadScape',
+    tags: ['React', 'Node.js', 'Social Platform', 'Content Management'],
+  },
+  {
+    id: 'barengin',
+    title: 'Barengin Squad Up',
+    description:
+      'A social ticketing platform with gamification-based matching to help users find event partners. Discover events, match with like-minded attendees, and never go to concerts or gatherings alone again.',
+    year: '2024',
+    role: 'Developer',
+    link: 'https://github.com/rifhrzi/barengin-squad-up',
+    tags: ['Social Platform', 'Ticketing', 'Gamification', 'Matchmaking'],
+  },
+  {
+    id: 'guidely',
+    title: 'Guidely',
+    description:
+      'An accessible navigation application designed to help visually impaired users navigate their surroundings safely and independently. Features voice guidance, obstacle detection, and intuitive audio cues.',
+    year: '2024',
+    role: 'Developer',
+    link: 'https://github.com/rifhrzi/guidely',
+    tags: ['Accessibility', 'Navigation', 'Mobile App', 'AI'],
+  },
+  {
+    id: 'pasir-febrio',
+    title: 'Pasir Febrio',
+    description:
+      'A full-stack web application with client-server architecture, featuring modular design patterns and deployment configurations for scalable web services.',
+    year: '2024',
+    role: 'Full Stack Developer',
+    link: 'https://github.com/rifhrzi/pasir-febrio',
+    tags: ['JavaScript', 'Full Stack', 'REST API'],
+  },
+  {
     id: 'teelite-web',
     title: 'Teelite E-Commerce Platform',
     description:
@@ -47,7 +97,7 @@ export const projects = [
   },
   {
     id: 'hmi-rnd',
-    title: 'HMI R&D Study Club Series',
+    title: 'HMIF R&D Study Club Series',
     description:
       'Initiated a recurring study club and co-hosted workshops with Ruang Data to upskill informatics students in emerging tech.',
     year: '2024',
@@ -94,7 +144,13 @@ export const principles = [
 
 export const experience = [
   {
-    period: 'Dec 2024 - Present',
+    period: 'Oct 2025 - Present',
+    title: 'Freelance Web Developer',
+    summary:
+      'Building custom web applications and digital solutions for clients, specializing in React, Next.js, and modern frontend technologies.',
+  },
+  {
+    period: 'Dec 2024 - Mar 2025',
     title: 'Part-Time Web Developer & UI/UX Designer at Teelite',
     summary:
       'Designing Teelite storefronts, finance trackers, and UI audits that keep partner funnels tied to shipping experiments.',
@@ -150,6 +206,6 @@ export const contact = {
     { label: 'Dribbble', href: 'https://dribbble.com' },
     { label: 'Behance', href: 'https://behance.net' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com' },
-    { label: 'GitHub', href: 'https://github.com' },
+    { label: 'GitHub', href: 'https://github.com/rifhrzi' },
   ],
 }

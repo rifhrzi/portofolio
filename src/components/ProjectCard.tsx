@@ -1,127 +1,70 @@
-import { useCallback, useEffect, useState, type MouseEvent } from 'react'
-import { motion, useMotionValue, useReducedMotion, useSpring } from '../lib/motion'
+import { motion, useReducedMotion } from '../lib/motion'
 import type { projects } from '../data/content'
 
 type Project = (typeof projects)[number]
 
-type ProjectCardProps = {
+interface ProjectCardProps {
   project: Project
   index: number
-  className?: string
 }
 
-const ProjectCard = ({ project, index, className }: ProjectCardProps) => {
-  const rotateX = useMotionValue(0)
-  const rotateY = useMotionValue(0)
-  const springX = useSpring(rotateX, { stiffness: 150, damping: 18 })
-  const springY = useSpring(rotateY, { stiffness: 150, damping: 18 })
+const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const prefersReducedMotion = useReducedMotion()
-  const [supportsPointerFine, setSupportsPointerFine] = useState(false)
-  const baseDelay = prefersReducedMotion ? 0 : 0.2 + index * 0.08
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setSupportsPointerFine(false)
-      return
-    }
-
-    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
-      return
-    }
-
-    const query = window.matchMedia('(pointer: fine)')
-    const updateState = (event: MediaQueryListEvent | MediaQueryList) =>
-      setSupportsPointerFine(event.matches)
-
-    updateState(query)
-
-    const handler = (event: MediaQueryListEvent) => updateState(event)
-    query.addEventListener('change', handler)
-
-    return () => {
-      query.removeEventListener('change', handler)
-    }
-  }, [prefersReducedMotion])
-
-  const enableTilt = !prefersReducedMotion && supportsPointerFine
-
-  const handleMouseMove = useCallback(
-    (event: MouseEvent<HTMLDivElement>) => {
-      const rect = event.currentTarget.getBoundingClientRect()
-      const x = event.clientX - rect.left
-      const y = event.clientY - rect.top
-      const centerX = rect.width / 2
-      const centerY = rect.height / 2
-      const rotateAmountX = ((y - centerY) / centerY) * -6
-      const rotateAmountY = ((x - centerX) / centerX) * 6
-      rotateX.set(rotateAmountX)
-      rotateY.set(rotateAmountY)
-    },
-    [rotateX, rotateY],
-  )
-
-  const resetRotation = useCallback(() => {
-    rotateX.set(0)
-    rotateY.set(0)
-  }, [rotateX, rotateY])
 
   return (
     <motion.article
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-5 py-7 text-left transition duration-500 sm:px-8 sm:py-10 md:px-10 md:py-12 ${className ?? ''}`}
-      initial={prefersReducedMotion ? false : { opacity: 0, y: 32, scale: 0.97 }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
-      viewport={
-        prefersReducedMotion ? undefined : { once: true, amount: 0.45, margin: '-10% 0px -10% 0px' }
-      }
-      transition={
-        prefersReducedMotion
-          ? undefined
-          : { duration: 0.9, delay: baseDelay, ease: [0.22, 1, 0.36, 1] as const }
-      }
-      style={
-        enableTilt
-          ? { rotateX: springX, rotateY: springY, transformStyle: 'preserve-3d', transformPerspective: 1200 }
-          : undefined
-      }
-      whileHover={
-        prefersReducedMotion
-          ? undefined
-          : enableTilt
-            ? { translateY: -8 }
-            : { translateY: -6, scale: 1.01 }
-      }
-      onMouseMove={enableTilt ? handleMouseMove : undefined}
-      onMouseLeave={enableTilt ? resetRotation : undefined}
+      className="group flex h-full flex-col rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-accent/30"
+      initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
     >
-      <div className="mb-6 flex items-center justify-between md:mb-8">
-        <span className="text-sm font-semibold uppercase tracking-[0.35em] text-muted/80">
+      {/* Header */}
+      <div className="mb-4 flex items-center justify-between">
+        <span className="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent">
           {project.year}
         </span>
-        <span className="text-sm text-muted">0{index + 1}</span>
-      </div>
-      <h3 className="font-display text-2xl text-white text-pretty sm:text-3xl">{project.title}</h3>
-      <p className="mt-4 max-w-xl text-sm text-pretty text-muted">{project.description}</p>
-      <ul className="mt-6 flex flex-wrap gap-2 text-xs text-muted/90">
-        {project.tags.map((tag) => (
-          <li
-            key={tag}
-            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 transition duration-300 group-hover:border-accent/40 group-hover:text-accent"
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-8 w-8 items-center justify-center rounded-lg text-muted transition-colors hover:bg-white/10 hover:text-accent"
+            aria-label={`View ${project.title}`}
           >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        )}
+      </div>
+
+      {/* Content */}
+      <h3 className="mb-2 font-display text-lg font-semibold text-white transition-colors group-hover:text-accent">
+        {project.title}
+      </h3>
+      <p className="mb-4 line-clamp-3 flex-1 text-sm text-muted">
+        {project.description}
+      </p>
+
+      {/* Tags */}
+      <div className="flex flex-wrap gap-1.5">
+        {project.tags.slice(0, 3).map((tag) => (
+          <span key={tag} className="rounded bg-white/5 px-2 py-1 text-xs text-muted/70">
             {tag}
-          </li>
+          </span>
         ))}
-      </ul>
-      <div className="mt-8 text-sm font-semibold text-white">{project.role}</div>
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100"
-        style={{
-          background:
-            'radial-gradient(circle at 30% 30%, rgba(255, 137, 6, 0.25), transparent 55%), radial-gradient(circle at 70% 70%, rgba(46, 180, 255, 0.2), transparent 60%)',
-          transform: 'translateZ(-10px)',
-        }}
-        transition={prefersReducedMotion ? undefined : { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
-        aria-hidden
-      />
+        {project.tags.length > 3 && (
+          <span className="rounded bg-white/5 px-2 py-1 text-xs text-muted/50">
+            +{project.tags.length - 3}
+          </span>
+        )}
+      </div>
+
+      {/* Role */}
+      <div className="mt-4 border-t border-white/5 pt-4">
+        <p className="text-xs text-muted">{project.role}</p>
+      </div>
     </motion.article>
   )
 }

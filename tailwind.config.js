@@ -4,34 +4,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Space Grotesk"', 'sans-serif'],
-        body: ['"Inter"', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', '"Space Grotesk"', 'system-ui', 'sans-serif'],
+        body: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       colors: {
-        ink: '#0f0e17',
+        ink: '#0a0a0f',
         accent: '#ff8906',
-        muted: '#a7a9be',
-        surface: '#1b1a22',
-      },
-      boxShadow: {
-        glow: '0 0 50px rgba(255, 137, 6, 0.2)',
-      },
-      animation: {
-        'float-slow': 'float 12s ease-in-out infinite',
-        'spin-slow': 'spin 18s linear infinite',
-        'pulse-soft': 'pulseSoft 6s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
-          '25%': { transform: 'translate3d(-4%, 2%, 0)' },
-          '50%': { transform: 'translate3d(3%, -3%, 0)' },
-          '75%': { transform: 'translate3d(-2%, 4%, 0)' },
-        },
-        pulseSoft: {
-          '0%, 100%': { opacity: 0.35 },
-          '50%': { opacity: 0.55 },
-        },
+        muted: '#94a3b8',
+        surface: '#141419',
       },
     },
   },
