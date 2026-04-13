@@ -1,15 +1,7 @@
-import {
-  LazyMotion,
-  domAnimation,
-  m,
-  useMotionValue,
-  useReducedMotion as framerUseReducedMotion,
-  useSpring,
-} from 'framer-motion'
+import { LazyMotion, domAnimation, m, useMotionValue, useReducedMotion as framerUseReducedMotion, useSpring } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import { useEffect, useState, useRef, useCallback, type ReactNode, type RefCallback } from 'react'
 
-// Provider for lazy-loaded animations
 const MotionProvider = ({ children }: { children: ReactNode }) => (
   <LazyMotion features={domAnimation}>{children}</LazyMotion>
 )
@@ -21,24 +13,25 @@ const useIsMobile = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const check = () => setIsMobile(window.innerWidth < 768)
-    check()
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
 
-    window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   return isMobile
 }
 
-// Hook for reduced motion preference (respects system settings + mobile)
 const useReducedMotion = () => {
   const prefersReducedMotion = framerUseReducedMotion()
   const isMobile = useIsMobile()
   return prefersReducedMotion || isMobile
 }
 
-// Intersection Observer hook for scroll-based animations
+// Simplified in-view hook using native Intersection Observer
 interface InViewOptions {
   threshold?: number
   rootMargin?: string
@@ -69,7 +62,9 @@ const useOptimizedInView = (options: InViewOptions = {}): InViewResult => {
         if (entry.isIntersecting) {
           setInView(true)
           hasTriggered.current = true
-          if (once) observer.disconnect()
+          if (once) {
+            observer.disconnect()
+          }
         } else if (!once) {
           setInView(false)
         }

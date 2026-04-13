@@ -65,66 +65,6 @@ export const projects = [
     link: 'https://github.com/rifhrzi/pasir-febrio',
     tags: ['JavaScript', 'Full Stack', 'REST API'],
   },
-  {
-    id: 'teelite-web',
-    title: 'Teelite E-Commerce Platform',
-    description:
-      'Part-time collaboration designing UX audits and developing a responsive e-commerce storefront that elevates Teelite partner conversions.',
-    year: '2025',
-    role: 'Web Dev & UI/UX (Part-Time)',
-    link: 'https://example.com/teelite',
-    tags: ['E-Commerce', 'Next.js', 'UX Audit'],
-  },
-  {
-    id: 'teelite-finance',
-    title: 'Teelite Finance Tracker',
-    description:
-      'Built a lightweight finance dashboard for Teelite partners to monitor campaign spend, revenue, and runway in real time.',
-    year: '2025',
-    role: 'Web Dev & UI/UX (Part-Time)',
-    link: 'https://example.com/teelite-finance',
-    tags: ['Dashboard', 'React', 'Data Visualization'],
-  },
-  {
-    id: 'space-studio',
-    title: 'Exorcist Bane (In Development)',
-    description:
-      "Lead contribution on combat systems, enemy encounters, and narrative progression for Space Studio's upcoming Exorcist Bane title.",
-    year: '2025',
-    role: 'Game Designer',
-    link: 'https://example.com/exorcist-bane',
-    tags: ['Game Design', 'Combat Systems', 'Narrative Design'],
-  },
-  {
-    id: 'hmi-rnd',
-    title: 'HMIF R&D Study Club Series',
-    description:
-      'Initiated a recurring study club and co-hosted workshops with Ruang Data to upskill informatics students in emerging tech.',
-    year: '2024',
-    role: 'Head of R&D',
-    link: 'https://example.com/hmi-study-club',
-    tags: ['Community Building', 'Workshop Design', 'Leadership'],
-  },
-  {
-    id: 'bangkit-uiux',
-    title: 'Bangkit Mobile Library',
-    description:
-      'Designed and prototyped a mobile library experience covering catalog discovery, borrowing flows, and reading progress tracking.',
-    year: '2023',
-    role: 'UI/UX Designer',
-    link: 'https://example.com/bangkit-library',
-    tags: ['UI/UX Design', 'Prototyping', 'User Research'],
-  },
-  {
-    id: 'untirta-mobile',
-    title: 'Untirta Alumni Portal',
-    description:
-      'Built core Flutter modules for the Untirta alumni mobile portal, including authentication, news feed, and alumni networking features.',
-    year: '2024',
-    role: 'Flutter Developer Intern',
-    link: 'https://example.com/untirta-alumni',
-    tags: ['Flutter', 'Mobile Development', 'REST API'],
-  },
 ]
 
 export const principles = [
