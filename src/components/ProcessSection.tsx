@@ -44,9 +44,6 @@ const ProcessSection = () => {
 
         {/* Process Steps */}
         <div className="relative">
-          {/* Connection Line - Desktop */}
-          <div className="absolute left-0 right-0 top-20 hidden h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent lg:block" />
-
           <div className="grid gap-8 lg:grid-cols-3">
             {process.map((step, index) => (
               <motion.div
@@ -70,12 +67,6 @@ const ProcessSection = () => {
                         {index + 1}
                       </span>
                     </div>
-                    {/* Arrow - Desktop */}
-                    {index < process.length - 1 && (
-                      <div className="hidden flex-1 lg:block">
-                        <div className="h-px w-full bg-gradient-to-r from-accent/30 to-transparent" />
-                      </div>
-                    )}
                   </div>
 
                   {/* Content */}
