@@ -3,12 +3,16 @@ import { motion, useReducedMotion } from "../lib/motion";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../data/content";
 
-const categories = ["All", "Next.js", "React", "Mobile App", "E-Commerce"];
+const filterOrder = ["All", "Next.js", "React", "Mobile App", "E-Commerce"];
 
 const WorkSection = () => {
   const prefersReducedMotion = useReducedMotion();
   const [activeFilter, setActiveFilter] = useState("All");
   const [showAll, setShowAll] = useState(false);
+  const availableTags = new Set(projects.flatMap((project) => project.tags));
+  const categories = filterOrder.filter(
+    (category) => category === "All" || availableTags.has(category),
+  );
 
   const filteredProjects =
     activeFilter === "All"
@@ -66,9 +70,14 @@ const WorkSection = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-6">
           {displayedProjects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <div
+              key={project.id}
+              className="flex basis-full sm:basis-[calc(50%-0.75rem)] lg:basis-[calc(33.333%-1rem)]"
+            >
+              <ProjectCard project={project} index={index} />
+            </div>
           ))}
         </div>
 
